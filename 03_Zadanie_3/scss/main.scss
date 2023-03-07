@@ -1,0 +1,18 @@
+.box {
+	width: 100px;
+	height: 100px;
+}
+
+@mixin elementsColor() {
+	@for $i from 1 through 10 {
+		.block_#{$i} {
+			@if ($i % 2 == 0) {
+				border: 3px solid orange;
+			} @else {
+				border: 3px solid blue;
+			}
+		}
+	}
+}
+
+@include elementsColor;

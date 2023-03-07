@@ -1,0 +1,21 @@
+/*Napisz mixin o nazwie drawItem ,który przyjmuje dwa argumenty - kształt do narysowania, oraz kolor jego tła.
+
+Jeśli przekazany kształt to circle - stworzy koło o wymiarach 100px na 100px
+Jeśli przekazany kształt to rectangle - stworzy kwadrat o wymiarach 200px na 200px
+Dodaj mixin do elementu div o klasie draw-container.*/
+
+@mixin drawItem($shape, $color) {
+	@if $shape == circle {
+		border-radius: 50%;
+		background-color: $color;
+		width: 100px;
+		height: 100px;
+	} @else if $shape == rectangle {
+		background-color: $color;
+		width: 200px;
+		height: 200px;
+	}
+}
+.draw-container {
+	@include drawItem(rectangle, rgb(95, 174, 223));
+}
